@@ -1,0 +1,192 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="fonts.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="vendor/jquery-3.3.1.min.js"></script>
+		<script src="vendor/jquery-ui.min.js"></script>
+		<script src="vendor/jquery.ui.touch-punch.min.js"></script>
+		<script src="web_client.js"></script>
+
+		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+	</head>
+	<body>
+		<!-- Language choice -->
+		<div id="language_choice">
+			<div id="lang_nl" class="center" onclick="set_language('nl');">
+				<div class="lang_img">
+					<img src="images/flag_nl.png" />
+				</div>
+				<div class="lang_text">
+					Nederlands
+				</div>
+			</div>
+			<div id="lang_en" class="center" onclick="set_language('en');">
+				<div class="lang_img">
+					<img src="images/flag_uk.png" />
+				</div>
+				<div class="lang_text">
+					English
+				</div>
+			</div>
+		</div>
+		<!-- End of language choice -->
+
+		<!-- Item that the participant has to perform -->
+		<div id="item_to_perform_container">
+			<div id="item_to_perform">
+				<div id="item_to_perform_image" class="center">
+					<img src="images/chair.png" />
+				</div>
+				<div id="item_to_perform_description" class="center">
+					Description
+				</div>
+			</div>
+
+			<div id="button_container" class="center">
+				<div id="button_item_to_perform" class="button center" onclick="item_button_pressed();">Start!</div>
+			</div>
+
+			<div id="countdown">
+				3
+			</div>
+		</div>
+		<!-- End of item that the participant has to perform -->
+
+		<!-- Choice of answers -->
+		<div id="answers">
+			<div id="answer1" class="answer_block center" onclick="answer_selected(this);">
+				<div id="answer1_image" class="answer_image">
+					<img src="images/pencil.png" />
+				</div>
+				<div id="answer1_text" class="answer_text">
+					Answer1
+				</div>
+			</div>
+			<div id="answer2" class="answer_block center" onclick="answer_selected(this);">
+				<div id="answer2_image" class="answer_image">
+					<img src="images/pencil.png" />
+				</div>
+				<div id="answer2_text" class="answer_text">
+					Answer2
+				</div>
+			</div>
+			<div id="answer3" class="answer_block center" onclick="answer_selected(this);">
+				<div id="answer3_image" class="answer_image">
+					<img src="images/cup.png" />
+				</div>
+				<div id="answer3_text" class="answer_text">
+					Answer3
+				</div>
+			</div>
+			<div id="answer4" class="answer_block center" onclick="answer_selected(this);">
+				<div id="answer4_image" class="answer_image">
+					<img src="images/horse.png" />
+				</div>
+				<div id="answer4_text" class="answer_text">
+					Answer4
+				</div>
+			</div>
+			<div id="answer_overlay">
+				&nbsp;
+			</div>
+		</div>
+		<!-- End of choice of answers -->
+		
+
+		<!-- Feedback on what the robot was thinking -->
+		<div id="feedback">
+			<div id="feedback_item_1" class="feedback_item">
+				<div id="feedback_1_text" class="feedback_text">
+					Paard
+				</div>
+				<div id="feedback_1_image" class="feedback_image">
+					<img src="images/horse.png" />
+				</div>
+				<div class="feedback_bar_background">
+					<div id="feedback_1_bar" class="feedback_bar">
+						&nbsp;
+					</div>
+				</div>
+				<div id="feedback_1_percentage" class="feedback_percentage">
+					50%
+				</div>		
+			</div>
+
+			<div id="feedback_item_2" class="feedback_item">
+				<div id="feedback_2_text" class="feedback_text">
+					Paard
+				</div>
+				<div id="feedback_2_image" class="feedback_image">
+					<img src="images/horse.png" />
+				</div>
+				<div class="feedback_bar_background">
+					<div id="feedback_2_bar" class="feedback_bar">
+						&nbsp;
+					</div>
+				</div>
+				<div id="feedback_2_percentage" class="feedback_percentage">
+					50%
+				</div>		
+			</div>
+
+			<div id="feedback_item_3" class="feedback_item">
+				<div id="feedback_3_text" class="feedback_text">
+					Paard
+				</div>
+				<div id="feedback_3_image" class="feedback_image">
+					<img src="images/horse.png" />
+				</div>
+				<div class="feedback_bar_background">
+					<div id="feedback_3_bar" class="feedback_bar">
+						&nbsp;
+					</div>
+				</div>
+				<div id="feedback_3_percentage" class="feedback_percentage">
+					50%
+				</div>		
+			</div>
+
+			<div id="feedback_item_4" class="feedback_item">
+				<div id="feedback_4_text" class="feedback_text">
+					Paard
+				</div>
+				<div id="feedback_4_image" class="feedback_image">
+					<img src="images/horse.png" />
+				</div>
+				<div class="feedback_bar_background">
+					<div id="feedback_4_bar" class="feedback_bar">
+						&nbsp;
+					</div>
+				</div>
+				<div id="feedback_4_percentage" class="feedback_percentage">
+					50%
+				</div>		
+			</div>
+
+			<div id="feedback_item_5" class="feedback_item">
+				<div id="feedback_5_text" class="feedback_text">
+					Paard
+				</div>
+				<div id="feedback_5_image" class="feedback_image">
+					<img src="images/horse.png" />
+				</div>
+				<div class="feedback_bar_background">
+					<div id="feedback_5_bar" class="feedback_bar">
+						&nbsp;
+					</div>
+				</div>
+				<div id="feedback_5_percentage" class="feedback_percentage">
+					50%
+				</div>		
+			</div>
+		</div>
+
+		<!-- Robot is thinking... -->
+		<div id="robot_thinking">
+			<div id="hourglass">
+				<img src="images/hourglass.png">
+			</div>
+		</div>
+		
+	</body>
+</html>
